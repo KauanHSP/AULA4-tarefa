@@ -1,28 +1,14 @@
+import { MensagemStatus } from "./utils/statusPedido";
+
 function App() {
-
-  let mensagens = ["1", "2"]
-
-  function Notificacao({mensagens}) {
-    if (mensagens.length == 0){
-      return <p>Nenhuma Notificação nova</p>
-    }
-
-    return (
-      <p>Voce tem {mensagens.length} {
-        mensagens.length == 1 ? "notificação" : "notificações"
-      }</p>
-    )
-  }
-
-
   return (
     <>
-    <div>
-      <h1>notificações</h1>
-      <Notificacao mensagens={mensagens}/>
-    </div>
+    <p>{MensagemStatus("pendente")}</p>
+    <p>{MensagemStatus("enviado")}</p>
+    <p>{MensagemStatus("entregue")}</p>
+    <p>{MensagemStatus("cancelado")}</p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
